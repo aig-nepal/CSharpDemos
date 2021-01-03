@@ -8,12 +8,12 @@ namespace Interface.ConsoleUI
     {
         static void Main(string[] args)
         {
-            List<PhysicalProductModel> physicalProductModels = AddSampleData();
+            List<PhysicalProductModel> carts = AddSampleData();
             CustomerModel customer = GetCustomer();
 
-            foreach (var physicalProductModel in physicalProductModels)
+            foreach (var cart in carts)
             {
-                physicalProductModel.ShipItem(customer);
+                cart.ShipItem(customer);
             }
         }
 
