@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interface.Library
 {
-    public class DigitalProductModel : IProductModel
+    public class DigitalProductModel : IDigitalProductModel
     {
         public string Title { get; set; }
 
