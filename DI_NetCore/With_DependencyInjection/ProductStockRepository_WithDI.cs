@@ -4,13 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DI_NetCore
+namespace DI_NetCore.With_DependencyInjection
 {
-    public class ProductStockRepository
+
+    public interface IProductStockRepository_WithDI
+    {
+        void AddStock(ProductEnum productEnum);
+        bool IsInStock(ProductEnum productEnum);
+        void ReduceStock(ProductEnum productEnum);
+    }
+
+    public class ProductStockRepository_WithDI : IProductStockRepository_WithDI
     {
         private static Dictionary<ProductEnum, int> _productStockDatabase = Setup();
 
-       
+
         private static Dictionary<ProductEnum, int> Setup()
         {
 
@@ -22,7 +30,7 @@ namespace DI_NetCore
 
             return productStockDatabase;
 
-        }   
+        }
 
 
         public bool IsInStock(ProductEnum productEnum)

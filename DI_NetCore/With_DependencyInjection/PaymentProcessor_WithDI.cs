@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DI_NetCore
+namespace DI_NetCore.With_DependencyInjection
 {
-    public class PaymentProcessor
+
+    public interface IPaymentProcessor_WithDI
+    {
+        void ChargeCreditCard(string creaditCardNumber, string expiryDate);
+    }
+
+    public class PaymentProcessor_WithDI : IPaymentProcessor_WithDI
     {
         public void ChargeCreditCard(string creaditCardNumber, string expiryDate)
         {

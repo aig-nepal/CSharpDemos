@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DI_NetCore
+namespace DI_NetCore.Without_DependencyInjection
 {
-    public class ShippingProcessor
+    public class ShippingProcessor_WithoutDI
     {
         public void MailProduct(ProductEnum productEnum)
         {
-            var productStockRepository = new ProductStockRepository();
+            var productStockRepository = new ProductStockRepository_WithoutDI();
             productStockRepository.ReduceStock(productEnum);
 
             Console.WriteLine("call to shipping api");
